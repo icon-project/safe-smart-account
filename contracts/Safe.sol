@@ -67,6 +67,9 @@ contract Safe is
     mapping(bytes32 => uint256) public override signedMessages;
     // Mapping to keep track of all hashes (message or transaction) that have been approved by ANY owners
     mapping(address => mapping(bytes32 => uint256)) public override approvedHashes;
+    //Mapping from transaction hash to the remarks of execution
+    mapping(bytes32 => string) public transactionRemarks;
+
 
     // This constructor ensures that this contract can only be used as a singleton for Proxy contracts
     constructor() {
@@ -188,6 +191,37 @@ contract Safe is
                 ITransactionGuard(guard).checkAfterExecution(txHash, success);
             }
         }
+    }
+
+    function executeTransaction(
+        address to,
+        uint256 value,
+        bytes calldata data,
+        Enum.Operation operation,
+        uint256 safeTxGas,
+        uint256 baseGas,
+        uint256 gasPrice,
+        address gasToken,
+        address payable refundReceiver,
+        bytes memory signatures,
+        string memory remark
+    ) public payable returns (bool success) {
+        bytes32 txHash = getTransactionHash( // Transaction info
+                to,
+                value,
+                data,
+                operation,
+                safeTxGas,
+                // Payment info
+                baseGas,
+                gasPrice,
+                gasToken,
+                refundReceiver,
+                nonce
+            );
+        success = execTransaction(to, value, data, operation, safeTxGas, baseGas, gasPrice, gasToken, refundReceiver, signatures);
+        if(success) transactionRemarks[txHash] = remark;
+        return success;   
     }
 
     /**

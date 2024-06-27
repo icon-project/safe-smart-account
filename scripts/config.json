@@ -1,0 +1,74 @@
+{
+  "ethereum": {
+    "xcall_proxy_address": "0xfc83a3f252090b26f92f91dfb9dc3eb710adaf1b",
+    "xcall_proxy_admin": "0x062AE315F188aE86818020977Dd2f38785b576f4",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://rpc.ankr.com/eth"
+  },
+  "avalanche": {
+    "xcall_proxy_address": "0xfc83a3f252090b26f92f91dfb9dc3eb710adaf1b",
+    "xcall_proxy_admin": "0x062AE315F188aE86818020977Dd2f38785b576f4",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://api.avax.network/ext/bc/C/rpc"
+  },
+  "optimism": {
+    "xcall_proxy_address": "0xfc83a3f252090b26f92f91dfb9dc3eb710adaf1b",
+    "xcall_proxy_admin": "0x062AE315F188aE86818020977Dd2f38785b576f4",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://mainnet.optimism.io"
+  },
+  "arbitrum": {
+    "xcall_proxy_address": "0xfc83a3f252090b26f92f91dfb9dc3eb710adaf1b",
+    "xcall_proxy_admin": "0x062ae315f188ae86818020977dd2f38785b576f4",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://arb1.arbitrum.io/rpc"
+  },
+  "binance": {
+    "xcall_proxy_address": "0xfc83a3f252090b26f92f91dfb9dc3eb710adaf1b",
+    "xcall_proxy_admin": "0x062AE315F188aE86818020977Dd2f38785b576f4",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://binance.llamarpc.com"
+  },
+  "base": {
+    "xcall_proxy_address": "0x7fdde482956770D148E055f9d2893f84a1B6B00B",
+    "xcall_proxy_admin": "0x4D532497ac29333Ca2F55DD4aaCaa6a992de6De3",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://mainnet.base.org"
+  },
+  "fuji": {
+    "xcall_proxy_address": "0x28ecb198e86a7FcA1cf51032635967fc26cDDAaD",
+    "xcall_proxy_admin": "0x8a16fa2c417022aF92e7c543369Ec9ae9A22c38d",
+    "safe": "0x22D4EE65F2e61AF1ae77556c20a8DB9eBEDCF82A",
+    "rpc": "https://api.avax-test.network/ext/bc/C/rpc"
+  },
+  "sepolia": {
+    "xcall_proxy_address": "0xB7039f15fFa33A6f44cA4913f33cE2adC0dbe71D",
+    "xcall_proxy_admin": "0x47271E2038441C9a8349D2c14D67a6116e47389F",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://eth-sepolia.g.alchemy.com/v2/JxPqX6PhmfdYfoQ1avgoBFwCxNUCKzu2"
+  },
+  "binance_testnet": {
+    "xcall_proxy_address": "0xD59C71E42a1Fc070e4c2c94f0eAE0840043681D0",
+    "xcall_proxy_admin": "0xbBFF9283De7De82Ecf4291B25b5644247e7C5714",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://data-seed-prebsc-1-s1.binance.org:8545"
+  },
+  "optimism_sepolia": {
+    "xcall_proxy_address": "0x9835d02616f76Dc5f92E689F49b08566CFAFafcA",
+    "xcall_proxy_admin": "0xC1f9eC17152e4338c8d94A3Bf7EAE307c2516B30",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://sepolia.optimism.io"
+  },
+  "arbitrum_sepolia": {
+    "xcall_proxy_address": "0x52eC9a532439AAB34FbbD20aFb3D2351fA982583",
+    "xcall_proxy_admin": "0x9256083fa27ea7860f18085a50fae6542bd42bc6",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://sepolia-rollup.arbitrum.io/rpc"
+  },
+  "base_sepolia": {
+    "xcall_proxy_address": "0x0B59764C48297E768c135b8D072F9884a37EB84c",
+    "xcall_proxy_admin": "0x1300645100193af5fa881a4c2825fd5d5a2caae8",
+    "safe": "0x0000000000000000000000000000000000000000",
+    "rpc": "https://sepolia.base.org"
+  }
+}
