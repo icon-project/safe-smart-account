@@ -79,41 +79,53 @@ const userConfig: HardhatUserConfig = {
             blockGasLimit: 100000000,
             gas: 100000000,
         },
-        mainnet: {
+        ethereum: {
             ...sharedNetworkConfig,
-            url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-        },
-        gnosis: {
-            ...sharedNetworkConfig,
-            url: "https://rpc.gnosischain.com",
-        },
-        goerli: {
-            ...sharedNetworkConfig,
-            url: `https://goerli.infura.io/v3/${INFURA_KEY}`,
-        },
-        mumbai: {
-            ...sharedNetworkConfig,
-            url: `https://polygon-mumbai.infura.io/v3/${INFURA_KEY}`,
-        },
-        polygon: {
-            ...sharedNetworkConfig,
-            url: `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`,
-        },
-        bsc: {
-            ...sharedNetworkConfig,
-            url: `https://bsc-dataseed.binance.org/`,
-        },
-        arbitrum: {
-            ...sharedNetworkConfig,
-            url: `https://arb1.arbitrum.io/rpc`,
-        },
-        fantomTestnet: {
-            ...sharedNetworkConfig,
-            url: `https://rpc.testnet.fantom.network/`,
+            url: "https://rpc.ankr.com/eth",
         },
         avalanche: {
             ...sharedNetworkConfig,
-            url: `https://api.avax.network/ext/bc/C/rpc`,
+            url: "https://api.avax.network/ext/bc/C/rpc",
+        },
+        optimism: {
+            ...sharedNetworkConfig,
+            url: "https://mainnet.optimism.io",
+        },
+        arbitrum: {
+            ...sharedNetworkConfig,
+            url: "https://arb1.arbitrum.io/rpc",
+        },
+        binance: {
+            ...sharedNetworkConfig,
+            url: "https://binance.llamarpc.com",
+        },
+        base: {
+            ...sharedNetworkConfig,
+            url: "https://mainnet.base.org",
+        },
+        fuji: {
+            ...sharedNetworkConfig,
+            url: "https://api.avax-test.network/ext/bc/C/rpc",
+        },
+        sepolia: {
+            ...sharedNetworkConfig,
+            url: "https://eth-sepolia.g.alchemy.com/v2/JxPqX6PhmfdYfoQ1avgoBFwCxNUCKzu2",
+        },
+        binance_testnet: {
+            ...sharedNetworkConfig,
+            url: "https://data-seed-prebsc-1-s1.binance.org:8545",
+        },
+        optimism_sepolia: {
+            ...sharedNetworkConfig,
+            url: "https://sepolia.optimism.io",
+        },
+        arbitrum_sepolia: {
+            ...sharedNetworkConfig,
+            url: "https://sepolia-rollup.arbitrum.io/rpc",
+        },
+        base_sepolia: {
+            ...sharedNetworkConfig,
+            url: "https://sepolia.base.org",
         },
     },
     deterministicDeployment,
