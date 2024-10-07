@@ -16,13 +16,37 @@ const argv = yargs
 
 // Load environment variables.
 dotenv.config();
-const { NODE_URL, INFURA_KEY, MNEMONIC, ETHERSCAN_API_KEY, PK, SOLIDITY_VERSION, SOLIDITY_SETTINGS } = process.env;
+const { NODE_URL, INFURA_KEY, MNEMONIC,
+    BSCSCAN_API_KEY,
+    ETHERSCAN_API_KEY,
+    BASESCAN_API_KEY,
+    OPTIMISMSCAN_API_KEY,
+    ARBITRUMSCAN_API_KEY,
+    SNOWSCAN_API_KEY,
+    POLYSCAN_API_KEY,
+    BSCTEST_RPC_URL,
+    SEPOLIA_RPC_URL,
+    FUJI_RPC_URL,
+    OPTIMISM_SEPOLIA_RPC_URL,
+    ARBITRUM_SEPOLIA_RPC_URL,
+    BASE_SEPOLIA_RPC_URL,
+
+
+    BINANCE_RPC_URL,
+    ETHEREUM_RPC_URL,
+    BASE_RPC_URL,
+    OPTIMISM_RPC_URL,
+    ARBITRUM_RPC_URL,
+    AVALANCHE_RPC_URL,
+    POLYGON_RPC_URL,
+
+    PRIVATE_KEY, SOLIDITY_VERSION, SOLIDITY_SETTINGS } = process.env;
 
 const DEFAULT_MNEMONIC = "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";
 
 const sharedNetworkConfig: HttpNetworkUserConfig = {};
-if (PK) {
-    sharedNetworkConfig.accounts = [PK];
+if (PRIVATE_KEY) {
+    sharedNetworkConfig.accounts = [PRIVATE_KEY];
 } else {
     sharedNetworkConfig.accounts = {
         mnemonic: MNEMONIC || DEFAULT_MNEMONIC,
@@ -81,27 +105,31 @@ const userConfig: HardhatUserConfig = {
         },
         ethereum: {
             ...sharedNetworkConfig,
-            url: "https://rpc.ankr.com/eth",
+            url: ETHEREUM_RPC_URL,
         },
         avalanche: {
             ...sharedNetworkConfig,
-            url: "https://api.avax.network/ext/bc/C/rpc",
+            url: AVALANCHE_RPC_URL,
         },
         optimism: {
             ...sharedNetworkConfig,
-            url: "https://mainnet.optimism.io",
+            url: OPTIMISM_RPC_URL,
         },
         arbitrum: {
             ...sharedNetworkConfig,
-            url: "https://arb1.arbitrum.io/rpc",
+            url: ARBITRUM_RPC_URL,
         },
         binance: {
             ...sharedNetworkConfig,
-            url: "https://binance.llamarpc.com",
+            url: BINANCE_RPC_URL,
         },
         base: {
             ...sharedNetworkConfig,
-            url: "https://mainnet.base.org",
+            url: BASE_RPC_URL,
+        },
+        polygon: {
+            ...sharedNetworkConfig,
+            url: POLYGON_RPC_URL,
         },
         fuji: {
             ...sharedNetworkConfig,
@@ -127,6 +155,10 @@ const userConfig: HardhatUserConfig = {
             ...sharedNetworkConfig,
             url: "https://sepolia.base.org",
         },
+        polygon_testnet: {
+            ...sharedNetworkConfig,
+            url: "https://matic-mumbai.chainstacklabs.com",
+        }
     },
     deterministicDeployment,
     namedAccounts: {
@@ -136,7 +168,23 @@ const userConfig: HardhatUserConfig = {
         timeout: 2000000,
     },
     etherscan: {
-        apiKey: ETHERSCAN_API_KEY,
+        apiKey: {
+            ethereum: ETHERSCAN_API_KEY || "",
+            polygon: POLYSCAN_API_KEY || "",
+            binance: BSCSCAN_API_KEY || "",
+            arbitrum: ARBITRUMSCAN_API_KEY || "",
+            optimism: OPTIMISMSCAN_API_KEY || "",
+            avalanche: SNOWSCAN_API_KEY || "",
+            base: BASESCAN_API_KEY || "",
+
+            arbitrum_sepolia: ARBITRUMSCAN_API_KEY || "",
+            fuji: SNOWSCAN_API_KEY || "",
+            sepolia: ETHERSCAN_API_KEY || "",
+            base_sepolia: BASESCAN_API_KEY || "",
+            optimism_sepolia: OPTIMISMSCAN_API_KEY || "",
+            binance_testnet: BSCSCAN_API_KEY || "",
+            polygon_testnet: POLYSCAN_API_KEY || "",
+        },
     },
 };
 if (NODE_URL) {

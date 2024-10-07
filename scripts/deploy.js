@@ -64,10 +64,10 @@ const saveDeploymentAddress = async (networkName, safeAddress) => {
   config[networkName].safe = safeAddress;
 
   fs.writeFileSync(filePath, JSON.stringify(config, null, 2));
-  console.log(`Saved Safe address ${safeAddress} to network ${networkName} in deployment_addresses.json`);
+  console.log(`Saved Safe address ${safeAddress} to network ${networkName} in config.json`);
 };
 
-const createSafeProxy = async (factory, singleton, saltNumber = getRandomIntAsString()) => {
+const createSafeProxy = async (factory, singleton, saltNumber = 2) => {
   const singletonAddress = await singleton.getAddress();
   const proxyAddress = await factory.createProxyWithNonce.staticCall(singletonAddress, "0x", saltNumber);
   await factory.createProxyWithNonce(singletonAddress, "0x", saltNumber).then((tx) => tx.wait());
